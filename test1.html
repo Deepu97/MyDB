@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./decorate.css">
+</head>
+<body>
+    
+    <div id="outer">
+        <h1 id="head">MyDatabase.com</h1>
+     <div id="padding">
+    <div id="div">
+        <label for="text">DBQuery :</label>
+        <input type="text" name="text" id="inp" placeholder="Enter DB query">
+        <button id="btn" onclick="executeQuery()">Execute</button>
+    </div>
+    <div id="open_save">
+    <button id="btn1" onclick="openFile()">Open File</button>
+    <button id="btn2" onclick="saveFile()">Save File</button>
+    </div>
+    </div>
+    <!-- show data in tabuler form -->
+     <div id="table_center">
+    <table id="tab">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        
+    </table>
+ </div>
+</div>
+    <script src="./json.js"></script>
+</body>
+</html>
+	

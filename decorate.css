@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#outer{
+    background-color: tomato;
+    
+}
+#padding{
+    padding: 10rem;
+}
+#head{
+    text-align: center;
+   
+    color: rgb(21, 197, 144);
+}
+/* input and Execute button */
+#div{
+    width:32rem;
+}
+#div label{
+    font-size: 20px;
+    color:darkred;
+
+}
+#inp{
+    padding: 12px;
+    width:15rem;
+    border-radius: 1rem;
+    border:none;
+    margin-left: 12px;
+}
+#btn{
+    padding: 12px;
+    border-radius: 10px;
+    border:none;
+    margin-left: 12px;
+    color:white;
+    font-size:15px;
+    background-color: purple;
+}
+/* open save file */
+#open_save{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#open_save button{
+    margin: 1rem;
+    padding: 17px;
+    width: 9rem;
+    border-radius: 1rem;
+    border:none;
+}
+#btn1{
+    background-color:rgb(16, 235, 114);
+}
+#btn2{
+    background-color: rgb(115, 219, 12);
+}
+
+/* table decoration*/
+#table_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#tab{
+      width: 20rem;
+    border:1px solid black;
+}
+table tr th{
+    border: 1px solid black;
+}
+#table td{
+    border: 1px solid black;
+    text-align: center;
+}
+
