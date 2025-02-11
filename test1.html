@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./decorate.css">
+    <link rel="stylesheet" href="./db.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
@@ -16,24 +17,95 @@
         <input type="text" name="text" id="inp" placeholder="Enter DB query">
         <button id="btn" onclick="executeQuery()">Execute</button>
     </div>
+   
+    <div style="display: flex;flex-direction: column;margin-top: 3rem;">
+        <input type="text"id="name" placeholder="enter name"/>
+        <input type="text" name="" id="age" placeholder="enter age">
+        <button style="margin-top: 1rem;" onclick="insertData()">insert data</button>
+    </div>
+    <div id="commands">
+        <button onclick="showHide()" id="hello">show commands</button>
+        <div class="align">
+        <ol class="order" id="order">
+        <div class="all_div">
+            <li>CREATE TABLE users (id INT, name TEXT, age INT)</li>
+            <button class="button_inp" onclick="passValue(li1)">Use Create Query</button>
+        </div>
+      <div class="all_div"> 
+        <li>INSERT INTO users (id, name, age) VALUES (1, 'John', 25) </li>
+        <button class="button_inp"  onclick="passValue(li2)">Use insert Query</button>
+    </div>
+       <div class="all_div">
+        <li>SELECT * FROM users ORDER BY age DESC LIMIT 1</li>
+        <button class="button_inp"  onclick="passValue(li3)">Use select Query</button>
+       </div>
+        <div class="all_div">
+            <li>UPDATE users SET age = 30 WHERE id = 1 </li>
+            <button class="button_inp"  onclick="passValue(li4)">Use update Query</button>
+        </div>
+        <div class="all_div">
+            <li>DELETE FROM users WHERE id = 1 </li>
+            <button class="button_inp"  onclick="passValue(li5)">Use Delete Query</button>
+        
+        </div>
+        
+        </ol>
+     
+        </div>
+    </div>
     <div id="open_save">
     <button id="btn1" onclick="openFile()">Open File</button>
     <button id="btn2" onclick="saveFile()">Save File</button>
     </div>
     </div>
     <!-- show data in tabuler form -->
-     <div id="table_center">
+     <div id="table_center" >
     <table id="tab">
-        <tr>
+        <tr class="row">
             <th>ID</th>
             <th>Name</th>
             <th>Age</th>
+            <th>Delete</th>
+            <th>Update</th>
         </tr>
         
     </table>
+
+
+    <!-- update the table by using inputs -->
+    <div style="display: none;" id="form">
+        <div>
+            <label for="">Name</label>
+        <input type="text" name="" id="value">
+        </div>
+        <div>
+            <label for="">value</label>
+            <input type="text" name="" id="setvalue">
+
+        </div>
+        <input id="update" type="submit" value="update" onclick="showTable()"/>
+
  </div>
 </div>
-    <script src="./json.js"></script>
+<!-- form which take input from form and pass to update function -->
+ <div id="update_form" style="display: none;">
+    <div>
+        <label for="">name</label>
+        <input type="text" id="inp1">
+    </div>
+    <div >
+        <label for="">value</label>
+        <input type="text" id="inp2">
+    </div>
+    <div id="button1">
+        <button onclick="changeUpdate()">update</button>
+    </div>
+    
+</div>
+<!-- iudiuhiufh -->
+</div>
+
+    <script src="./db.js"></script>
 </body>
 </html>
 	
