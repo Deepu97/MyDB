@@ -13,16 +13,18 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #outer{
-    background-color: tomato;
+    background-color: rgb(89 221 129);
+    border-radius: 2rem;
     
 }
 #padding{
-    padding: 10rem;
+    padding: 6rem;
 }
 #head{
     text-align: center;
    
-    color: rgb(21, 197, 144);
+    color: rgb(36 141 183);
+    margin-top: 24rem;
 }
 /* input and Execute button */
 #div{
@@ -41,9 +43,10 @@ body{
     margin-left: 12px;
 }
 #btn{
-    padding: 12px;
+    padding: 14px;
     border-radius: 10px;
     border:none;
+    width: 6rem;
     margin-left: 12px;
     color:white;
     font-size:15px;
@@ -51,7 +54,7 @@ body{
 }
 /* open save file */
 #open_save{
-    margin-top: 5rem;
+    margin-top: 9rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,28 +66,82 @@ body{
     border-radius: 1rem;
     border:none;
 }
+
+#commands{
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+}
+.order{
+    margin-top: 4rem;
+    display: none;
+}
+#order li{
+    margin: 1rem;
+    width: 30rem;
+    /* display: none; */
+}
+#hello{
+    padding: 12px;
+    background-color: chocolate;
+    color: white;
+    box-shadow: 2px 3px 3px black;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+}
 #btn1{
     background-color:rgb(16, 235, 114);
+    box-shadow: 2px 2px 11px black;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
 }
 #btn2{
     background-color: rgb(115, 219, 12);
+    box-shadow: 2px 2px 11px black;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 /* table decoration*/
 #table_center{
     display: flex;
     align-items: center;
+   
     justify-content: center;
 }
-#tab{
+#tab {
       width: 20rem;
     border:1px solid black;
+    background-color: white;
+   
 }
+
 table tr th{
     border: 1px solid black;
+   
 }
 #table td{
     border: 1px solid black;
     text-align: center;
 }
+/* button use for insert the value to the input box */
+
+.button_inp{
+    padding: 12px;
+    border-radius: 1rem;
+}
+.all_div{
+    display: flex;
+}
+.all_div button{
+    margin: 10px;
+    
+}
+
 
