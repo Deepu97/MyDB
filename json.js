@@ -1,7 +1,7 @@
 ////open and saveOpen file
 let fileHandle;  // Stores the selected file handle
 let fileContent = ""; // Stores the file content
-
+let max=0;
 // Function to Open a File
 async function openFile() {
     try {
@@ -124,6 +124,8 @@ class LocalSQL {
 
         let row = {};
         columns.forEach((col, i) => row[col.trim()] = values[i].trim().replace(/['"]/g, ""));
+        row.id=max;
+        max++;
         db[tableName].push(row);
         this.saveDB(db);
 
@@ -151,7 +153,7 @@ class LocalSQL {
             result = this.limitResults(tokens, result);
         }
 
-        return result;
+        return {result,tableName};
     }
 
     // UPDATE users SET age = 30 WHERE id = 1;
@@ -233,37 +235,56 @@ function executeQuery(){
 
     let inp=document.getElementById('inp');
     const hello=db.execute(inp.value);
-    console.log(hello);
+    console.log(hello.result);
+    console.log(hello.tableName)
+
+    
     
     ////create a dynamicall table in html where we display our user data when we run select query
     
    //when select command is run it create a table in html and show all data
-    hello.forEach((ele)=>{
+    hello.result.forEach((ele)=>{
+       
+        
         //create tr and td using js 
         const tr=document.createElement('tr');
         const td=document.createElement('td');
        const td1=document.createElement('td');
         const td2=document.createElement('td');
+        const td3=document.createElement('td');
+        const td4=document.createElement('td');
+
         console.log(ele);
         //styling the tr AND td which we make dynamically
         tr.style.textAlign="center";
         td.style.border="1px solid black";
         td1.style.border="1px solid black";
         td2.style.border="1px solid black";
+        td3.style.border="1px solid black";
+        td4.style.border="1px solid black";
+        
+        
         /////////////////////////////////////////////////
 
         //write text in td 
         td.innerText=ele.id;
         td1.innerText=ele.name;
         td2.innerText=ele.age;
+        td3.innerHTML=`<i onclick='removeRow(${ele.id},"${hello.tableName}")' class="fa-solid fa-delete-left"></i>`;
+        td4.innerHTML=`<i onclick="updateRow()" class="fa-solid fa-pen-to-square"></i>`;
         /////////////////
 
         //td append in tr
         tr.appendChild(td);
         tr.appendChild(td1);
         tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
         //tr now append in table element
         tab.appendChild(tr);
+        
+        ////////////create a div in which contain a button and this button is append into form
+     
     })
     inp.value="";
 
@@ -277,4 +298,24 @@ function executeQuery(){
 
 
 }
+function removeRow(id,row) {
+   
+    db.execute(`DELETE FROM ${row} WHERE id = ${id}`)
 
+    // db.execute("SELECT * FROM users");
+    
+}
+function updateRow(){
+    const table=document.getElementById("table_center");
+    const form=document.getElementById("update_form");
+    table.style.display="none";
+    form.style.display="flex";
+    form.style.flexDirection="column";
+    form.style.justifyContent="center";
+}
+
+function changeUpdate() {
+    const inp1=document.getElementById("inp1");
+    const inp2=document.getElementById("inp2");
+    db.execute(`UPDATE users SET ${inp1.value} = ${inp2.value} WHERE id = 1`);
+}
